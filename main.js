@@ -1,3 +1,8 @@
 if('serviceWorker' in navigator){
-    console.log("service worker work");
+    window.addEventListener('load', function(){
+        navigator.serviceWorker
+        .register('sw_cached_pages.js')
+        .then(reg => console.log('service worker registered' + reg))
+        .catch(err => console.log(`Service Worker: Error: ${err}`))
+    });
 }
